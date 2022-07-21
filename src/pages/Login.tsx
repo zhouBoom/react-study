@@ -1,4 +1,6 @@
-function Login<Component >() {
+import React from 'react';
+
+function Login() {
     return (
         <div>login页面</div>
     )

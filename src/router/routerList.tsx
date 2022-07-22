@@ -29,22 +29,26 @@ const pageRouter = [
     children: [
       {
         path: '/page',
+        key: '1',
         title: 'Page',
         element: <Page3 />
       },
       {
         path: '/home',
+        key: '2',
         title: 'Home',
         element: <Home/>,
         children: [
           {
             path: 'class',
-            title: 'Home',
+            key: '2-1',
+            title: 'Class',
             element: <Page3/>
           },
           {
             path: 'lesson',
-            title: 'Home',
+            key: '2-2',
+            title: 'Lesson',
             element: <Login/>,
           }
         ]

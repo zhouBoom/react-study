@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import { otherRouter, pageRouter } from './routerList';
 
 const allRouter = [...pageRouter, ...otherRouter];
@@ -27,9 +27,9 @@ export default function index() {
     );
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>{renderRouter(allRouter)}</Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 
-function Home(props) {
+function LinkPage(props) {
   console.log(props);
   return (
     <div>
@@ -13,4 +13,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default LinkPage;

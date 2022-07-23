@@ -52,27 +52,10 @@ const LeftNav = () => {
     <div>
       <Layout style={{height: '100vh'}}>
         <Sider trigger={null} collapsible>
-          {/* <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
-                <MenuFoldOutlined/>
-                <Link to="/home">首页</Link>
-            </Menu.Item>
-            <Menu.Item key="2">
-                <MenuUnfoldOutlined/>
-                <Link to="/page">测试</Link>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <UploadOutlined/>
-              <Link to="/home/class">测试</Link>
-            </Menu.Item>
-            <SubMenu title="文件介绍" icon={<VideoCameraOutlined/>}>
-                <Menu.Item>
-                  <UserOutlined/>
-                  <Link to="/home/lesson">测试</Link>
-                </Menu.Item>
-            </SubMenu>
-          </Menu> */}
+        <Link to="/" className="left-nav-header">
+					{/* <img src={logo} alt="" /> */}
+					<h1>react学习系统</h1>
+				</Link>
           <Menu
               mode="inline"
               defaultSelectedKeys={["1"]}
@@ -94,7 +77,6 @@ const LeftNav = () => {
               minHeight: 280,
             }}
           >
-            {/* {<RouterConfig/>} */}
           </Content>
         </Layout>
       </Layout>

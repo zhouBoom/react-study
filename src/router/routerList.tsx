@@ -3,7 +3,9 @@ import Admin from '../pages/Admin';
 import NotFound from '../pages/Notfound';
 import React from 'react';
 import Page3 from '../pages/Page3';
-import Home from '../pages/Home';
+// import Home from '../pages/Home';
+import Home from '../pages/home';
+import Todo from '../pages/todo';
 
 const otherRouter = [
   {
@@ -28,31 +30,43 @@ const pageRouter = [
     element: <Admin/>,
     children: [
       {
-        path: '/page',
+        path: '/home',
         key: '1',
+        title: 'Home',
+        element: <Home />
+      },
+      {
+        path: '/page',
+        key: '2',
         title: 'Page',
         element: <Page3 />
       },
       {
-        path: '/home',
-        key: '2',
-        title: 'Home',
-        element: <Home/>,
-        children: [
-          {
-            path: 'class',
-            key: '2-1',
-            title: 'Class',
-            element: <Page3/>
-          },
-          {
-            path: 'lesson',
-            key: '2-2',
-            title: 'Lesson',
-            element: <Login/>,
-          }
-        ]
-      }
+        path: '/todo',
+        key: '3',
+        title: 'ToDo',
+        element: <Todo />
+      },
+      // {
+      //   path: '/home',
+      //   key: '3',
+      //   title: 'Home',
+      //   element: <Home/>,
+      //   children: [
+      //     {
+      //       path: 'class',
+      //       key: '3-1',
+      //       title: 'Class',
+      //       element: <Page3/>
+      //     },
+      //     {
+      //       path: 'lesson',
+      //       key: '3-2',
+      //       title: 'Lesson',
+      //       element: <Login/>,
+      //     }
+      //   ]
+      // }
     ]
   }
 ];

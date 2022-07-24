@@ -1,12 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import 'antd/dist/antd.min.css';
 import 'zent/css/index.css';
 import reportWebVitals from './reportWebVitals';
 import RouterConfig from './router'
 
-const root = ReactDOM.createRoot(
+const root = createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(

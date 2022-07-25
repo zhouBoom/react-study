@@ -6,6 +6,9 @@ import Page3 from '../pages/Page3';
 // import Home from '../pages/Home';
 import Home from '../pages/home';
 import Todo from '../pages/todo';
+import Project from '../pages/project';
+import CreateProject from '../pages/project/create';
+import Personal from '../pages/personal';
 
 const otherRouter = [
   {
@@ -47,26 +50,31 @@ const pageRouter = [
         title: 'ToDo',
         element: <Todo />
       },
-      // {
-      //   path: '/home',
-      //   key: '3',
-      //   title: 'Home',
-      //   element: <Home/>,
-      //   children: [
-      //     {
-      //       path: 'class',
-      //       key: '3-1',
-      //       title: 'Class',
-      //       element: <Page3/>
-      //     },
-      //     {
-      //       path: 'lesson',
-      //       key: '3-2',
-      //       title: 'Lesson',
-      //       element: <Login/>,
-      //     }
-      //   ]
-      // }
+      {
+        path: '/project',
+        key: '4',
+        title: 'Project',
+        children: [
+          {
+            path: 'list',
+            key: '4-1',
+            title: '项目列表',
+            element: <Project/>
+          },
+          {
+            path: 'create',
+            key: '4-2',
+            title: '项目创建',
+            element: <CreateProject/>,
+          }
+        ]
+      },
+      {
+        path: '/personal',
+        key: '5',
+        title: 'Personal',
+        element: <Personal />
+      },
     ]
   }
 ];

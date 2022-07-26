@@ -1,5 +1,5 @@
-import { SetStateAction, useState } from 'react';
-import { Grid, Notify } from 'zent';
+import { useState } from 'react';
+import { Button, Grid, Notify } from 'zent';
 import { getColumns } from '../../config/project';
 
 let datalist = []
@@ -15,8 +15,20 @@ for (let i = 0; i < 10; i++) {
 
 function Project() {
     const [datasets, setDatasets] = useState(datalist);
+    const addLine = () => {
+      datasets.push({
+        id: `id`,
+        proName: `项目`,
+        descripton: `项目介绍`,
+        phase: '2',
+        total: 10
+      })
+      setDatasets([...datasets])
+    }
     return (
-        <Grid
+        <>
+          <Button onClick={addLine}>添加</Button>
+          <Grid
             columns={getColumns()}
             datasets={datasets}
             rowClassName={(data, index) => `${data.id}-${index}`}
@@ -25,6 +37,8 @@ function Project() {
             rowKey="id"
             size="large"
         />
+        </>
+        
     )
 }
 

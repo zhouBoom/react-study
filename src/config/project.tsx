@@ -25,7 +25,7 @@ export function getColumns() {
         width: 300,
         bodyRender(data, { row }) {
             const item = {
-                key: '1', text: 'N/A'
+                key: '2', text: 'Design Devlopment'
             }
             return (
             <Select

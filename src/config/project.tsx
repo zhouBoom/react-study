@@ -93,45 +93,6 @@ export function getColumns() {
                 width: 60, 
             }
         ]
-    },
-    // {
-    //   title: "商品信息",
-    //   name: "productInfo",
-    //   children: [
-    //     {
-    //       title: "类型",
-    //       name: "type",
-    //       width: 200,
-    //     },
-    //     {
-    //       title: "供货商",
-    //       name: "supplier",
-    //       children: [
-    //         {
-    //           title: "公司",
-    //           name: "company",
-    //           width: 300,
-    //         },
-    //         {
-    //           title: "电话",
-    //           name: "phone",
-    //           width: 300,
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    // {
-    //   title: "库存",
-    //   name: "stock",
-    //   defaultText: 0,
-    // },
-    // {
-    //   title: "创建时间",
-    //   name: "createdTime",
-    //   width: 100,
-    //   needSort: true,
-    //   fixed: "right",
-    // },
+    }
   ];
 };

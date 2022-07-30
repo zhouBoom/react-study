@@ -9,6 +9,7 @@ import Todo from '../pages/todo';
 import Project from '../pages/project';
 import CreateProject from '../pages/project/create';
 import Personal from '../pages/personal';
+import DashBoard from '../pages/DashBoard';
 
 const otherRouter = [
   {
@@ -39,10 +40,10 @@ const pageRouter = [
         element: <Home />
       },
       {
-        path: '/page',
+        path: '/dashboard',
         key: '2',
-        title: 'Page',
-        element: <Page3 />
+        title: 'DashBoard',
+        element: <DashBoard />
       },
       {
         path: '/todo',

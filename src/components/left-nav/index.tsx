@@ -54,7 +54,7 @@ const LeftNav = () => {
         <Sider trigger={null} collapsible>
         <Link to="/" className="left-nav-header">
 					{/* <img src={logo} alt="" /> */}
-					<h1>react学习系统</h1>
+					<h1>Generator</h1>
 				</Link>
           <Menu
               mode="inline"
@@ -62,6 +62,7 @@ const LeftNav = () => {
               defaultOpenKeys={["sub1"]}
               onSelect={handleSelect}
               style={{height: "100%", borderRight: 0}}
+              theme="dark"
             >
               {genMenu(pageRouter[1].children)}
             </Menu>

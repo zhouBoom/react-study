@@ -10,6 +10,7 @@ import Project from '../pages/project';
 import CreateProject from '../pages/project/create';
 import Personal from '../pages/personal';
 import DashBoard from '../pages/DashBoard';
+import ReduxDemo from '../pages/reduxDemo';
 
 const otherRouter = [
   {
@@ -76,6 +77,12 @@ const pageRouter = [
         title: 'Personal',
         element: <Personal />
       },
+      {
+        path: '/redux-demo',
+        key: '6',
+        title: 'Redux-Demo',
+        element: <ReduxDemo />
+      }
     ]
   }
 ];

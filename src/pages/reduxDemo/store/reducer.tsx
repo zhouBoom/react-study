@@ -5,6 +5,8 @@ const defaultState = {
     enterLoading: true
 }
 
+console.log(actionTypes)
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultState, action: { type: any; data: any }) => {
     switch (action.type) {
@@ -22,3 +24,11 @@ export default (state = defaultState, action: { type: any; data: any }) => {
             return state;
     }
 }
+
+// 这个就是reducers!
+// export default (state=defaultState, action)=>{
+//     let actionType = action.type;
+//     // 使用策略模式，更好的操作你的Types。
+//     actionTypes[actionType] && actionTypes[actionType](action.payload);
+//     return state;
+// };

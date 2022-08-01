@@ -4,8 +4,15 @@ import './index.less';
 import {
 	ExclamationCircleOutlined,
   } from '@ant-design/icons';
+import { connect } from 'react-redux'
 
-const Header = () => {
+const mapStateToProps = (state) => {
+	return {
+		userInfo: state.userinfo
+	}
+}
+
+const Header = ({userInfo}) => {
 	const logOut = () => {
 		Modal.confirm({
 			content: '是否退出',
@@ -24,7 +31,7 @@ const Header = () => {
 		<Affix offsetTop={0}>
 		<div className="header">
 			<div className="header-top">
-				<span>欢迎，周斌</span>
+				<span>欢迎，{userInfo.username}</span>
 				<LinkButton onClick={logOut}>退出</LinkButton>
 			</div>
 		</div>
@@ -33,4 +40,4 @@ const Header = () => {
 }
 
 
-export default Header;
+export default connect(mapStateToProps)(Header);

@@ -12,6 +12,7 @@ import Personal from '../pages/personal';
 import DashBoard from '../pages/dashBoard';
 import HookStudy from '../pages/hookStudy'
 import ReduxStudy from '../pages/reduxStudy';
+import ReduxDemo from '../pages/reduxDemo';
 
 const otherRouter = [
   {
@@ -90,6 +91,12 @@ const pageRouter = [
         title: 'Redux',
         element: <ReduxStudy />
       },
+      {
+        path: '/redux-demo',
+        key: '6',
+        title: 'Redux-Demo',
+        element: <ReduxDemo />
+      }
     ]
   }
 ];

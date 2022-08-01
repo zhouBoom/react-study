@@ -9,7 +9,9 @@ import Todo from '../pages/todo';
 import Project from '../pages/project';
 import CreateProject from '../pages/project/create';
 import Personal from '../pages/personal';
-import DashBoard from '../pages/DashBoard';
+import DashBoard from '../pages/dashBoard';
+import HookStudy from '../pages/hookStudy'
+import ReduxStudy from '../pages/reduxStudy';
 
 const otherRouter = [
   {
@@ -75,6 +77,18 @@ const pageRouter = [
         key: '5',
         title: 'Personal',
         element: <Personal />
+      },
+      {
+        path: '/hookstudy',
+        key: '6',
+        title: 'Hook',
+        element: <HookStudy />
+      },
+      {
+        path: '/reduxstudy',
+        key: '7',
+        title: 'Redux',
+        element: <ReduxStudy />
       },
     ]
   }

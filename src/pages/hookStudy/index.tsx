@@ -1,4 +1,4 @@
-import { SetStateAction, useCallback, useMemo, useRef, useState } from "react";
+import { createContext, SetStateAction, useCallback, useContext, useMemo, useRef, useState } from "react";
 import { Alert, Input, Notify } from "zent";
 import Button from "./components/Button";
 import OtherForm from "./components/OtherForm";
@@ -112,6 +112,34 @@ const UseCallbackRef2 = () => {
     )
 }
 
+const TestContext = createContext({});
+
+const Navbar = () => {
+    const { value1, username } = useContext(TestContext)
+    return (
+        <div style={{width: '200px'}}>
+            <Alert type="success">
+                <span>这是组件1</span>
+                <span>{value1}</span>
+                <p>{username}</p>
+            </Alert>
+        </div>
+    )
+}
+
+const Navbar2 = () => {
+    const { value1, username } = useContext(TestContext)
+    return (
+        <div style={{width: '200px'}}>
+            <Alert type="success">
+                <span>这是组件2</span>
+                <span>{value1}</span>
+                <p>{username}</p>
+            </Alert>
+        </div>
+    )
+}
+
 function HookStudy() {
     return(
         <>
@@ -147,6 +175,21 @@ function HookStudy() {
         <UseMemo/>
         <p>使用useMemo</p>
         <UseMemo2/>
+        <Alert>
+            <span>Hook的useContext</span>
+            <p>两个组件状态共享，如果需要在深层次组件之间共享状态</p>
+            <p>context提供了一种组件之间共享props的方式，这样就不用显示的通告prop传递数据</p>
+            <p>在组件外使用useContext定义一个对象，然后在需要统一传递的组件外包裹 对象.provider, 然后传递value</p>
+        </Alert>
+        <TestContext.Provider value={
+            { 
+                value1: '传递的val',
+                username: 'superAwesome',
+            }
+        }>
+            <Navbar />
+            <Navbar2 />
+        </TestContext.Provider>
         </>
     )
 }

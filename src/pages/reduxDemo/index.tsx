@@ -1,8 +1,12 @@
-import { Alert, Avatar, Button, Card } from "zent";
+import { Alert, Avatar, Button, Card ,  LayoutRow as Row,
+    LayoutCol as Col,
+    LayoutGrid as Grid,
+    LayoutConfigProvider as ConfigProvider, } from "zent";
 import { connect } from 'react-redux'
 import { changeRecommendList } from './store/actionCreators'
 import { useEffect, useState } from "react";
 import { setUserInfo } from "../../store/userInfo";
+import { getProjectList, udpateProjectState } from "../../api/project";
 
 const mapStateToProps = (state) => {
     return {
@@ -23,21 +27,41 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
+function CardList({data}) {
+    return data.map((item, index) => {
+        return (
+            <Card title={item.name} key={index}>
+                {item.id}
+            </Card>
+        )
+    })
+}
+
 function ReduxDemo({data, userinfo, getRecommendListDispatch, updateInfo}) {
     const [userInfo, setUserInfo] = useState({
         username: '王武',
         headimg: 'https://img.yzcdn.cn/public_files/2018/02/01/5df3bb4b640ddc5efae915b7af90a243.png',
         des: '更改过后的说明'
     })
+    const [cardData, setCardData] = useState([])
 
     const updateUserInfo = () => {
         updateInfo(userInfo)
     }
 
-    console.log(userinfo)
-    // useEffect(() => { Hook生命周期
-    //     getRecommendListDispatch();
-    // }, [getRecommendListDispatch])
+    const getList = () => {
+        getProjectList(1).then((res) => {
+            setCardData(res.data)
+        })
+    }
+    useEffect(() => {  //Hook生命周期
+        getProjectList(1).then((res) => {
+            console.log(res)
+        })
+        udpateProjectState({id: 2}).then((res) => {
+            console.log(res)
+        })
+    }, [])
     return(
         <div>
             <Alert>
@@ -88,6 +112,24 @@ function ReduxDemo({data, userinfo, getRecommendListDispatch, updateInfo}) {
             <p>{userinfo.des}</p>
             </Card>
             <Button onClick={updateUserInfo}>修改个人信息</Button>
+            <Alert>
+                <span>发起异步请求</span>
+            </Alert>
+            <ConfigProvider
+                value={{
+                rowGutter: 0,
+                colGutter: 10,
+                }}
+            >
+            <Grid>
+                <Row>
+                    <Col span={6}>
+                    <CardList data={cardData} />
+                    </Col>
+                </Row>
+            </Grid>
+            </ConfigProvider>
+            <Button onClick={getList}>发起请求</Button>
         </div>
     )
 }

@@ -2,16 +2,14 @@ import Login from '../pages/Login';
 import Admin from '../pages/Admin';
 import NotFound from '../pages/Notfound';
 import React from 'react';
-import Page3 from '../pages/Page3';
-// import Home from '../pages/Home';
 import Home from '../pages/home';
 import Todo from '../pages/todo';
 import Project from '../pages/project';
 import CreateProject from '../pages/project/create';
 import Personal from '../pages/personal';
-import DashBoard from '../pages/dashBoard';
 import HookStudy from '../pages/hookStudy'
 import ReduxDemo from '../pages/reduxDemo';
+import DashBoard from '../pages/DashBoard'
 
 const otherRouter = [
   {

@@ -1,6 +1,6 @@
 import client from "../utils/axios";
 
-export async function getProjectList(id) {
+export async function getProjectList(id: number) {
     const res = await client.get(`/project/${id}`);
     return res;
 }
